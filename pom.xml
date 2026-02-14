@@ -1,0 +1,54 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.example</groupId>
+    <artifactId>crud-usuarios</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+
+        <!-- MySQL JDBC -->
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>8.3.0</version>
+        </dependency>
+
+        <!-- JUnit 5 -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.10.1</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+    <profiles>
+
+        <profile>
+            <id>master</id>
+            <properties>
+                <db.url>jdbc:mysql://aurora-master:3306/test</db.url>
+                <db.user>admin</db.user>
+                <db.pass>password</db.pass>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>replica</id>
+            <properties>
+                <db.url>jdbc:mysql://aurora-replica:3306/test</db.url>
+                <db.user>admin</db.user>
+                <db.pass>password</db.pass>
+            </properties>
+        </profile>
+
+    </profiles>
+
+</project>
