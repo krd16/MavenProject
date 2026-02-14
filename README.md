@@ -81,4 +81,4 @@ mvn clean test
 
 Author
 
-Student of Multiplatform Application Development (DAM 1)
+Álvaro Sánchez - DAM 1
